@@ -1,10 +1,3 @@
-import { send } from "emailjs-com";
-const messageYes = "Она сказала да.";
-const messageNo = "Она сказала нет.";
-const serviceID = "service_kav7psm"; // идентификатор сервиса emailjs
-const templateIDNo = "template_80n4k8x"; // идентификатор шаблона emailjs
-const templateIDYes = "template_cn1kdd5";
-const userID = "YiR9J_LJ2RGloMkBL6YNX"; // идентификатор пользователя emailjs
 let noButton = document.getElementById("no");
 let yesButton = document.getElementById("yes");
 const cells = document.querySelectorAll('.cell');
@@ -52,15 +45,3 @@ cells.forEach(cell => {
     }
     );
 });
-window.setInterval( function(){
-    if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
-        alert(":)");
-        send(serviceID, templateIDYes, templateParams, userID)
-    }
-    else {
-        alert(":(");
-        send(serviceID, templateIDNo, templateParams, userID)
-    }
-},10)
-
-
