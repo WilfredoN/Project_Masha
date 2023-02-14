@@ -50,10 +50,10 @@ h1 {
 .board {
     margin: 0 0 20em 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px;
     width: 310px;
     height: 300px;
 }

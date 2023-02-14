@@ -49,10 +49,17 @@ cells.forEach(cell => {
     );
 });
 
-setInterval(() => {
+var check = setInterval(() => {
     if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
-        board.innerHTML = '<h1>Спасибо :)</h1>';
-        inputEl.innerHTML = '';
-        
+        end();
 }
 }, 10);
+function end() {
+    board.innerHTML = '<h1 style = "margin:0;text-align:center;font-size:3em;">Оу да, малыш капибара!</h1><img src = "images/happyend.png" style = "width:100%;height100%;">';
+    board.style.height = "100%";
+    board.style.width = "100%";
+    board.style.display = "flex";
+    board.style.flexDirection = "column";
+    inputEl.innerHTML = '';
+    clearInterval(check);
+}
