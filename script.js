@@ -51,12 +51,16 @@ cells.forEach(cell => {
         }
     }
     );
-if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
-    alert(":)");
-    emailjs.send(serviceID, templateIDYes, templateParams, userID)
-}
-else {
-    alert(":(");
-    emailjs.send(serviceID, templateIDNo, templateParams, userID)
-}
 });
+window.setInterval( function(){
+    if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
+        alert(":)");
+        emailjs.send(serviceID, templateIDYes, templateParams, userID)
+    }
+    else {
+        alert(":(");
+        emailjs.send(serviceID, templateIDNo, templateParams, userID)
+    }
+},10)
+
+
