@@ -1,4 +1,4 @@
-const emailjs = require("emailjs-com");
+import { send } from "emailjs-com";
 const messageYes = "Она сказала да.";
 const messageNo = "Она сказала нет.";
 const serviceID = "service_kav7psm"; // идентификатор сервиса emailjs
@@ -55,11 +55,11 @@ cells.forEach(cell => {
 window.setInterval( function(){
     if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
         alert(":)");
-        emailjs.send(serviceID, templateIDYes, templateParams, userID)
+        send(serviceID, templateIDYes, templateParams, userID)
     }
     else {
         alert(":(");
-        emailjs.send(serviceID, templateIDNo, templateParams, userID)
+        send(serviceID, templateIDNo, templateParams, userID)
     }
 },10)
 
