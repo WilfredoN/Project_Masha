@@ -1,6 +1,9 @@
 let noButton = document.getElementById("no");
 let yesButton = document.getElementById("yes");
 const cells = document.querySelectorAll('.cell');
+const board = document.querySelector(".board");
+const inputEl = document.getElementById("input");
+
 let isHeart = false;
 
 noButton.addEventListener("click", () => {
@@ -45,3 +48,11 @@ cells.forEach(cell => {
     }
     );
 });
+
+setInterval(() => {
+    if (cells[8].innerHTML == "<img src=\"/images/yes.png\" id=\"yescell\">") {
+        board.innerHTML = '<h1>Спасибо :)</h1>';
+        inputEl.innerHTML = '';
+        
+}
+}, 10);
